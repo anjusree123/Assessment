@@ -1,0 +1,80 @@
+#include<iostream.h>
+use namespace std;
+class Employee{
+	int emp_id,emp_age;
+	char emp_name[20];
+	public:void reademployee()
+		{
+			cout<<"enter the empid";
+			cin>>emp_id;
+			cout<<"enter the employee name";
+			cin>>emp_name;
+		}
+		void displayemployee()
+		{
+			cout<<"employee id"<<emp_id;
+			cout<<"employee name"<<emp_name;
+		}
+		void search(){
+		int key;
+		cout<<"enter the employee id to search";
+		cin>>key;
+		for(int j=0;j<=20;j++)
+			{
+			if (emp_id[j]==key)
+				{
+				cout<<"employee name is "<<emp_id[j].name;
+				}
+			else
+				{
+				cout<<"not found";
+				}
+			}
+	}
+};
+class Department:public Employee{
+	int dep_id;
+	char dep_name[20];
+	public:void readdepartment(){
+			cout<<"enter department id";
+			cin>>dep_id;
+			cout<<"enter the department name";
+			cin>>dep_name;
+			}
+		void displaydepartment(){
+			cout<<"department id"<<dep_id;
+			cout<<"department name"<<dep_name;
+			}
+		void searchdep(){
+			int keydep;
+			cout<<"enter the deparment id to search";
+			cin>>keydep;
+			for(int j=0;j<=20;j++)
+				{
+				if (dep_id[j]==keydep)
+					{
+					cout<<"employee name is "<<dep_id[j].name;
+					}
+				else
+					{
+					cout<<"not found";
+					}
+				}
+		}
+}
+int main()
+{
+	Department dp[20];
+	for (int i=0;i<=20;i++)
+	{
+		dp.reademployee();
+		dp.readdepartment();
+	}
+	for (int i=0;i<=20;i++)
+	{
+	dp.displayemployee();
+	dp.displaydepartment();
+	}
+	dp.search();
+	dp.searchdep();
+}
